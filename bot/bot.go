@@ -32,19 +32,27 @@ func Run() {
 }
 
 func messageHandler(s *discordgo2.Session, m *discordgo2.MessageCreate) {
+	var content string
 	if m.Author.ID == BotID {
 		return
 	}
-	if m.Content == "/help" {
+	switch m.Content {
+	case "/help":
 		file, err := os.ReadFile("./help.txt")
 		if err != nil {
 			log.Fatal(err)
 			return
 		}
-		content := string(file)
-		_, _ = s.ChannelMessageSend(m.ChannelID, content)
-	} else if m.Content == "/github" {
-		_, _ = s.ChannelMessageSend(m.ChannelID, "Click on the URL for see my github https://github.com/hbourgeot")
+
+		content = string(file)
+		break
+	case "/github":
+		content = "Click on the URL for see my github https://github.com/hbourgeot"
+		break
+	case "/portfolio":
+		content = "Click on the URL for see my portfolio https://portfolio-hb.herokuapp.com"
+		break
 	}
+	_, _ = s.ChannelMessageSend(m.ChannelID, content)
 
 }
