@@ -18,13 +18,13 @@ type configStruct struct {
 }
 
 func ReadConfig() error {
-	file, err := os.ReadFile("./config.json")
+	file, err := os.ReadFile("./config.json") //we read the config file
 	if err != nil {
 		log.Fatal(err)
 		return err
 	}
 
-	err = json.Unmarshal(file, &config)
+	err = json.Unmarshal(file, &config) // Unmarshal is the JSON.stringify of JavaScript
 	if err != nil {
 		log.Fatal(err)
 		return err

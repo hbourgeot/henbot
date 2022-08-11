@@ -13,6 +13,6 @@ func main() {
 		return
 	}
 	bot.Run()
-	<-make(chan struct{})
+	<-make(chan struct{}) //Channel for goroutines
 	return
 }
