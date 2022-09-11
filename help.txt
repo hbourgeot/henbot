@@ -1,2 +1,5 @@
-/portfolio -> See my Portfolio
-/github    -> See my github
+Commands list:
+
+/help        ➡  See commands list
+/portfolio ➡  See my Portfolio
+/github     ➡  See my github
