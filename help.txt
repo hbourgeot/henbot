@@ -1,5 +1,7 @@
-Commands list:
+Lista de comandos:
 
-/help        ➡  See commands list
-/portfolio ➡  See my Portfolio
-/github     ➡  See my github
+/help         ➡  Ver la lista de los comandos
+/portfolio ➡  Ver mi portafolio
+/github     ➡  Ver mi gthub
+/bot          ➡ Ver el repositorio de mi bot
+/sociales  ➡  Mis redes sociales

@@ -1,9 +1,10 @@
 package main
 
 import (
+	"log"
+
 	"github.com/hbourgeot/henbot/bot"
 	"github.com/hbourgeot/henbot/config"
-	"log"
 )
 
 func main() {
@@ -13,6 +14,6 @@ func main() {
 		return
 	}
 	bot.Run()
-	<-make(chan struct{}) //Channel for goroutines
+	<-make(chan struct{}) // Channel for goroutines
 	return
 }

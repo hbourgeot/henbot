@@ -51,12 +51,22 @@ func messageHandler(s *discordgo2.Session, m *discordgo2.MessageCreate) {
 		}
 		content += string(file)
 		break
+	case "/sociales":
+		file, err := os.ReadFile("./socials.txt")
+		if err != nil {
+			log.Fatal(err)
+			return
+		}
+		content += string(file)
+		break
 	case "/github":
-		content += "Click on the URL for see my github https://github.com/hbourgeot"
+		content += "Haz click en el link para ver mi github: https://github.com/hbourgeot"
 		break
 	case "/portfolio":
-		content += "Click on the URL for see my portfolio https://www.henrry.online"
+		content += "Haz click en el link para ver mi portafolio: https://www.henrry.online"
 		break
+	case "/bot":
+		content += "Aquí puedes ver el repo del bot: https://github.com/hbourgeot/henbot"
 	default:
 		return
 	}
@@ -71,7 +81,7 @@ func welcomeHandler(s *discordgo2.Session, m *discordgo2.MessageCreate) {
 	hour, minute, second := m.Member.JoinedAt.Local().Clock()
 
 	if hour == time.Now().Local().Hour() && minute == time.Now().Local().Minute() && second <= time.Now().Local().Second() {
-		content := "Welcome " + m.Author.Mention() + "!\n Please read the rules and use the /help command for know what I can do"
-		_, _ = s.ChannelMessageSend(m.ChannelID, content)
+		content := "Bienvenido a mi servidor " + m.Author.Mention() + "!\n Por favor lee las reglas del servidor y si quieres usa el comando /help para conocer lo que puedo hacer"
+		_, _ = s.ChannelMessageSend("1017897619843977278", content)
 	}
 }
