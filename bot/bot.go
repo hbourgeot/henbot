@@ -49,7 +49,7 @@ func messageHandler(s *discordgo2.Session, m *discordgo2.MessageCreate) {
 	content := m.Author.Mention() + "\n" // for show any content on the message
 
 	switch m.Content { // we switch on the message sent by anyone
-	case "/help":
+	case "/help", "/ayuda", "/HELP", "/AYUDA":
 		file, err := os.ReadFile("./help.txt")
 		if err != nil {
 			log.Fatal(err)
@@ -57,7 +57,7 @@ func messageHandler(s *discordgo2.Session, m *discordgo2.MessageCreate) {
 		}
 		content += string(file)
 		break
-	case "/sociales":
+	case "/sociales", "/SOCIALES":
 		file, err := os.ReadFile("./socials.txt")
 		if err != nil {
 			log.Fatal(err)
@@ -65,13 +65,13 @@ func messageHandler(s *discordgo2.Session, m *discordgo2.MessageCreate) {
 		}
 		content += string(file)
 		break
-	case "/github":
+	case "/github", "/GITHUB", "/gh":
 		content += "Haz click en el link para ver mi github: https://github.com/hbourgeot"
 		break
-	case "/portfolio":
+	case "/portfolio", "/portafolio", "/PORTAFOLIO", "/PORTFOLIO":
 		content += "Haz click en el link para ver mi portafolio: https://www.henrry.online"
 		break
-	case "/bot":
+	case "/bot", "/BOT":
 		content += "Aquí puedes ver el repo del bot: https://github.com/hbourgeot/henbot"
 	default:
 		return
@@ -134,6 +134,8 @@ func calcHandler(s *discordgo2.Session, m *discordgo2.MessageCreate) {
 
 		content = m.Author.Mention() + " el " + fmt.Sprint(operation[1]) + "% de " + fmt.Sprint(operation[2]) + " es igual a: "
 		_, _ = s.ChannelMessageSend(m.ChannelID, content+fmt.Sprint(percentage))
+		return
+	} else {
 		return
 	}
 

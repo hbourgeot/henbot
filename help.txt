@@ -1,7 +1,22 @@
 Lista de comandos:
 
-/help         ➡  Ver la lista de los comandos
-/portfolio ➡  Ver mi portafolio
-/github     ➡  Ver mi gthub
-/bot          ➡ Ver el repositorio de mi bot
-/sociales  ➡  Mis redes sociales
+/help, /ayuda =  Ver la lista de los comandos
+/portfolio, /portafolio = Ver mi portafolio
+/github = Ver mi gthub
+/bot = Ver el repositorio de mi bot
+/sociales = Mis redes sociales
+
+
+Comandos para operaciones matemáticas
+
+/calc-sum X Y = calcula la suma entre los dos elementos
+/calc-sub X Y = calcula la resta entre los dos elementos
+/calc-mul X Y = calcula la multiplicación entre los dos elementos
+/calc-div X Y = calcula la división entre los dos elementos
+/calc-mod X Y = calcula el resto de la división entre los dos elementos
+/calc-perc X Y = calcula el porcentaje X de Y
+
+SINTAXIS DE USO = /calc-sum X Y
+Intenten NO colocar alguna letra o símbolo cerca, si introducen más de dos números, no serán leídos
+
+NOTA: Para el porcentaje NO coloquen el %, ejemplo: en vez de colocar 50%, coloquen 50
